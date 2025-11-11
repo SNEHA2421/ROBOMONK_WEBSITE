@@ -1567,6 +1567,8 @@
   </style>
 </head>
 <body>
+
+  
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container">
@@ -1585,7 +1587,7 @@
           <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="#">Courses</a></li>
           <li class="nav-item"><a class="nav-link" href="#">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Blogs</a></li>
+          <li class="nav-item"><a class="nav-link" href="Blogs.html">Blogs</a></li>
           <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
           <li class="nav-item ms-2"><a class="btn btn-signin" href="#">Sign In</a></li>
         </ul>
@@ -1848,7 +1850,7 @@ scroll.addEventListener('mouseleave', () => scroll.style.animationPlayState = 'r
 <img src="../static/images/skill7.jpg" alt="Skill Image">
         <div class="card-body">
           <h5 class="course-title">Raspberry Pi & IoT Innovation Program</h5>
-          <p class="course-desc" id="desc5">Explore IoT innovation using Raspberry Pi and sensor-based automation. Design, connect, and deploy smart devices for real-world applications.</p>
+          <p class="course-desc" id="desc5">Explore IoT innovation using Raspberry Pi and sensor-based automation.Design, connect, and deploy smart devices for real-world applications.</p>
           <button class="read-more-btn" data-target="desc5">Read More</button>
           <div class="course-footer">
             <span><i class="bi bi-people"></i> 200 Students</span>
@@ -1862,7 +1864,7 @@ scroll.addEventListener('mouseleave', () => scroll.style.animationPlayState = 'r
 <img src="../static/images/skill8.jpg" alt="Skill Image">
         <div class="card-body">
           <h5 class="course-title">Prompt Engineering</h5>
-          <p class="course-desc" id="desc6">Learn to design effective AI prompts for ChatGPT and automation tools. Create intelligent workflows that enhance productivity and innovation.</p>
+          <p class="course-desc" id="desc6">Learn to design effective AI prompts for ChatGPT and automation tools.Create intelligent workflows that enhance productivity and innovation.</p>
           <button class="read-more-btn" data-target="desc6">Read More</button>
           <div class="course-footer">
             <span><i class="bi bi-people"></i> 340 Students</span>
@@ -2360,24 +2362,59 @@ track.addEventListener('mouseleave', () => track.style.animationPlayState = 'run
 </div>
 </section>
 
-<!-- ===================== SCROLL SCRIPT ===================== -->
+<!-- ===================== TESTIMONIAL CLICK-TO-PLAY FIX ===================== -->
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const container = document.getElementById('testimonialContainer');
-    const nextBtn = document.getElementById('testimonialNextBtn');
-    const prevBtn = document.getElementById('testimonialPrevBtn');
+document.addEventListener("DOMContentLoaded", function () {
+  const container = document.getElementById('testimonialContainer');
+  const nextBtn = document.getElementById('testimonialNextBtn');
+  const prevBtn = document.getElementById('testimonialPrevBtn');
 
-    if (container && nextBtn && prevBtn) {
-      nextBtn.addEventListener('click', () => {
-        container.scrollBy({ left: container.offsetWidth / 2, behavior: 'smooth' });
-      });
+  // Scroll buttons — keep same behavior
+  if (container && nextBtn && prevBtn) {
+    nextBtn.addEventListener('click', () => {
+      container.scrollBy({ left: container.offsetWidth / 2, behavior: 'smooth' });
+    });
+    prevBtn.addEventListener('click', () => {
+      container.scrollBy({ left: -container.offsetWidth / 2, behavior: 'smooth' });
+    });
+  }
 
-      prevBtn.addEventListener('click', () => {
-        container.scrollBy({ left: -container.offsetWidth / 2, behavior: 'smooth' });
-      });
-    }
+  // ✅ Replace iframes with <video> (for mp4 files)
+  const cards = container.querySelectorAll('.testimonial-card iframe');
+
+  cards.forEach(iframe => {
+    const src = iframe.getAttribute('src');
+    const videoWrapper = document.createElement('div');
+    videoWrapper.className = 'video-wrapper';
+
+    // Create a new <video> element that looks identical
+    const video = document.createElement('video');
+    video.src = src;
+    video.controls = true;
+    video.preload = "metadata";
+    video.style.width = "100%";
+    video.style.borderRadius = "10px";
+    video.style.objectFit = "cover";
+
+    // Disable autoplay (the key part)
+    video.autoplay = false;
+
+    // Add event so video only plays when clicked
+    video.addEventListener('click', () => {
+      if (video.paused) {
+        video.play();
+      } else {
+        video.pause();
+      }
+    });
+
+    // Replace iframe with new video tag
+    iframe.parentNode.replaceChild(video, iframe);
   });
+});
 </script>
+
+
 
 
   <!-- FAQ Section -->
