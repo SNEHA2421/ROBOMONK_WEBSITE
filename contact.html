@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>contact us  </title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap + Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Poppins', sans-serif; background: #EAF7F6; color: #333; overflow-x: hidden; }
+
+    /* ===================== ABOUT HERO ===================== */
+    .contact-section {
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(rgba(0, 80, 80, 0.85)),
+        url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1600&auto=format&fit=crop")
+        center/cover no-repeat;
+      color: #fff;
+      padding: 20px 8% 180px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-top: 0;
+    }
+
+    .contact-content { max-width: 640px; z-index: 5; }
+    .contact-content h2 { font-size: 3.2rem; font-weight: 800; margin-bottom: 20px; }
+    .contact-content p { font-size: 1.05rem; line-height: 1.8; color: #e8f9f8; }
+
+    .contact-image { flex: 1 1 340px; text-align: right; z-index: 6; }
+    .contact-image img {
+      width: 500px;
+      max-width: 100%;
+      transform: translateY(20px);
+      filter: drop-shadow(0 18px 36px rgba(0,0,0,0.18));
+    }
+
+    /* ===================== WAVES ===================== */
+    .wave-divider { position: absolute; bottom: 0; left: 0; width: 100%; line-height: 0; z-index: 1; pointer-events: none; }
+    .wave-divider svg { display: block; width: 100%; height: 300px; }
+    .wave-back { fill: #064c4b; opacity: 0.55; }
+    .wave-mid  { fill: #0b8887; opacity: 0.85; }
+    .wave-front{ fill: #EAF7F6; }
+
+ /* ===================== contact wrapper ===================== */
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #EAF7F6;
+    margin: 0;
+    padding: 40px;
+}
+
+.contact-container {
+    width: 100%;
+    max-width: 1150px;
+    margin: auto;
+    background: white;
+    border-radius: 20px;
+    display: flex;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+
+/* LEFT BOX */
+.left-box {
+    width: 35%;
+    background: #0b4f4f;
+    padding: 50px 45px;
+    color: white;
+    position: relative;
+}
+
+.left-box h2 {
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+.sub-title {
+    opacity: 0.8;
+    margin-bottom: 25px;
+}
+
+.left-details { margin-bottom: 40px; }
+
+.info-line {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 18px 0;
+    font-size: 15px;
+}
+
+/* ICON BADGE LEFT SIDE */
+.icon-badge {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-badge img {
+    width: 18px;
+    filter: invert(1);
+}
+
+/* SOCIAL ICONS — FIXED TO BOTTOM LEFT */
+.soc-icons {
+    position: absolute;
+    bottom: 25px;
+    left: 45px;
+    display: flex;
+    gap: 18px;
+    z-index: 10;
+}
+
+.soc-badge {
+    width: 40px;
+    height: 40px;
+    background: rgba(255,255,255,0.12);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.soc-badge img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+/* Decorative Circles */
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.circle.big {
+    width: 150px;
+    height: 150px;
+    bottom: 20px;
+    right: 20px;
+}
+
+.circle.small {
+    width: 90px;
+    height: 90px;
+    bottom: -10px;
+    right: 80px;
+}
+
+/* RIGHT SIDE */
+.right-box {
+    width: 65%;
+    padding: 50px 60px;
+}
+
+.form-row {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 25px;
+}
+
+.field {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 15px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+input,
+textarea {
+    border: none;
+    border-bottom: 2px solid #d1d1d1;
+    padding: 8px 4px;
+    font-size: 15px;
+    outline: none;
+}
+
+textarea {
+    resize: none;
+    height: 90px;
+    margin-bottom: 15px;
+}
+
+/* Subject Options */
+.subject-options {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+.send-btn {
+    background: #0b4f4f;
+    color: white;
+    padding: 14px 30px;
+    border: none;
+    border-radius: 8px;
+    float: right;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* ======================= MOBILE RESPONSIVE FIX ======================= */
+@media (max-width: 768px) {
+
+    .contact-container {
+        flex-direction: column;
+        width: 92%;
+        margin: 20px auto;
+        border-radius: 16px;
+    }
+
+    .left-box {
+        width: 100%;
+        padding: 35px 25px;
+        border-radius: 16px 16px 0 0;
+    }
+
+    .soc-icons {
+        position: relative;
+        left: 0;
+        bottom: 0;
+        margin-top: 20px;
+        justify-content: center;
+    }
+
+    .circle.big {
+        width: 110px;
+        height: 110px;
+        bottom: 10px;
+        right: 15px;
+    }
+
+    .circle.small {
+        width: 70px;
+        height: 70px;
+        bottom: -5px;
+        right: 65px;
+    }
+
+    .right-box {
+        width: 100%;
+        padding: 30px 25px;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .send-btn {
+        width: 100%;
+        text-align: center;
+        float: none;
+        margin-top: 10px;
+    }
+}
+
+/* ======================================================
+   DARK BANNER — BELOW CONTACT CARD
+====================================================== */
+
+/* Banner layout tuning */
+.contact-banner {
+    width: 92%;
+    max-width: 1250px;
+    margin: 35px auto;
+    padding: 60px 45px;
+    border-radius: 14px;
+    color: #fff;
+    background:
+      linear-gradient(rgba(6,75,75,0.82), rgba(6,75,75,0.82)),
+      url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1600&auto=format&fit=crop")
+      center/cover no-repeat;
+}
+
+
+/* Overall content */
+.banner-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+/* Left column — big heading */
+.banner-left { flex: 1 1 55%; min-width: 260px; }
+.banner-left .sub-title { letter-spacing: 2px; font-size: 13px; opacity: 0.9; margin-bottom: 12px; }
+.banner-heading {
+  font-size: 48px;
+  line-height: 1.02;
+  margin: 6px 0 16px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+.banner-left .description { max-width: 560px; color: rgba(255,255,255,0.92); line-height:1.6; }
+
+/* Right column — compact grid for phone/email */
+.banner-right { flex: 0 0 36%; min-width: 240px; position: relative; }
+
+/* Two-column contact grid (phone left / email right) */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 18px;
+  align-items: start;
+  margin-bottom: 18px;
+}
+
+/* small title above values */
+.mini-title { font-size: 15px; font-weight: 600; color: rgba(255,255,255,0.95); margin-bottom: 6px; }
+
+/* contact values (number/email) */
+.contact-value { font-size: 15px; color: rgba(255,255,255,0.95); padding: 6px 0 10px; }
+
+/* underline style for email similar to screenshot */
+.contact-email {
+  border-bottom: 1px solid rgba(255,255,255,0.22);
+  display: inline-block;
+  padding-bottom: 8px;
+}
+
+/* Headoffice section */
+.office-block { margin-top: 6px; margin-bottom: 8px; }
+.office-block .mini-title { font-weight:700; font-size:15px; margin-bottom:6px; color:rgba(255,255,255,0.95) }
+.office-address { color: rgba(255,255,255,0.9); line-height:1.45; font-size:14px; }
+
+/* Social icons row centered under the right content.
+   In the screenshot icons sit horizontally centered under the right column. */
+.banner-social-icons {
+  display:flex;
+  gap:14px;
+  margin-top:20px;
+  justify-content:center;
+}
+.social-link {
+  width:36px; height:36px; display:inline-flex; align-items:center; justify-content:center;
+  background: rgba(255,255,255,0.06); border-radius:8px; color:#fff; text-decoration:none;
+}
+.social-link i { font-size:18px; line-height:1; }
+.social-link:hover { background: rgba(255,255,255,0.10); color:#bff; }
+
+/* responsive tweaks to keep right block stacked on small screens */
+@media (max-width: 768px) {
+  .banner-content { flex-direction: column; gap:18px; }
+  .banner-left { order: 1; }
+  .banner-right { order: 2; width:100%; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .banner-social-icons { justify-content:flex-start; }
+  .banner-heading { font-size: 32px; }
+}
+
+
+/* ==========================
+       CTA SECTION
+    ========================== */
+    .cta-section {
+      background-color: #EAF7F6;
+      padding: 40px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .cta-box {
+      background-color: #00A6A6;
+      border: 2px dotted #ffffff;
+      border-radius: 10px;
+      padding: 40px;
+      width: 90%;
+      max-width: 1000px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #fff;
+    }
+
+    .cta-content h2 {
+      font-weight: 700;
+      font-size: 2rem;
+      line-height: 1.3;
+      margin-bottom: 15px;
+    }
+
+    .cta-content p {
+      margin-bottom: 0;
+      font-size: 1rem;
+    }
+
+    .cta-button {
+      background-color: #ffffff;
+      color: #00A6A6;
+      font-weight: 600;
+      border-radius: 8px;
+      border: none;
+      padding: 10px 30px;
+      transition: 0.3s;
+    }
+
+    .cta-button:hover {
+      background-color: #dff3f2;
+      transform: scale(1.05);
+    }
+
+    .cta-image {
+      width: 320px;
+      border-radius: 8px;
+    }
+
+</style>
+</head>
+
+<body>
+  <!-- ===== HEADER PLACEHOLDER ===== -->
+  <div id="header-placeholder"></div>
+
+  <!-- ===================== contact US ===================== -->
+  <section class="contact-section container-fluid">
+  <div class="row align-items-center justify-content-between px-lg-5 px-md-4 px-3">
+    <div class="col-lg-6 col-md-12">
+      <div class="contact-content">
+        <h2>Contact Us</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur. Dui auctor sagittis est et nisl. 
+          Cras blandit ultrices adipiscing eget volutpat sed. 
+          Lorem diam amet donec enim. Et viverra mauris.
+        </p>
+      </div>
+    </div>
+
+    <div class="col-lg-6 col-md-12 text-center">
+      <div class="contact-image">
+        <img src="../static/images/contact_us.png" alt="contact Us Illustration" class="img-fluid">
+      </div>
+    </div>
+  </div>
+
+  <!-- Wave Divider -->
+  <div class="wave-divider" aria-hidden="true">
+    <svg viewBox="0 0 1440 320" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path class="wave-back" d="M0,260 C120,160 300,120 480,170 C660,220 820,120 980,180 C1160,250 1280,230 1440,210 L1440,320 L0,320 Z" />
+      <path class="wave-mid"  d="M0,250 C140,170 320,110 520,170 C720,230 900,140 1060,190 C1220,240 1320,230 1440,220 L1440,320 L0,320 Z" />
+      <path class="wave-front" d="M0,280 C100,200 260,120 440,170 C620,220 820,120 1000,180 C1180,240 1320,220 1440,240 L1440,320 L0,320 Z" />
+    </svg>
+  </div>
+</section>
+ 
+<div class="contact-container">
+    <div class="left-box">
+        <h2>Contact Information</h2>
+        <p class="sub-title">Say something to start a live chat!</p>
+
+        <div class="left-details">
+            <div class="info-line">
+                <span class="icon-badge">
+            <div class="badge" aria-hidden="true">📞</div>
+                </span>
+                +1 012 3456 789
+            </div>
+
+            <div class="info-line">
+                <span class="icon-badge">
+            <div class="badge" aria-hidden="true">✉️</div>
+                </span>
+                demo@gmail.com
+            </div>
+
+            <div class="info-line">
+                <span class="icon-badge">
+            <div class="badge" aria-hidden="true">📍</div>
+                </span>
+                123 Dartmouth Street Boston,<br> Massachusetts 02156 United States
+            </div>
+        </div>
+
+      <div class="soc-icons">
+    <span class="soc-badge">
+        <img src="../static/images/instagram.png" alt="Instagram">
+    </span>
+
+    <span class="soc-badge">
+        <img src="../static/images/twitter.png" alt="Twitter">
+    </span>
+
+    <span class="soc-badge">
+        <img src="../static/images/whatsapp.png" alt="WhatsApp">
+    </span>
+</div>
+
+ <!-- DECORATION CIRCLES EXACT LIKE IMAGE -->
+        <div class="circle big"></div>
+        <div class="circle small"></div>
+    </div>
+
+    <div class="right-box">
+        <div class="form-row">
+            <div class="field">
+                <label>First Name</label>
+                <input type="text" placeholder="First Name">
+            </div>
+
+            <div class="field">
+                <label>Last Name</label>
+                <input type="text" placeholder="Last Name">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="field">
+                <label>Email</label>
+                <input type="email" placeholder="Email">
+            </div>
+
+            <div class="field">
+                <label>Phone Number</label>
+                <input type="text" placeholder="+1 012 3456 789">
+            </div>
+        </div>
+
+        <label class="subject-label">Select Subject?</label>
+        <div class="subject-options">
+            <label><input type="radio" name="subject"> General Inquiry</label>
+            <label><input type="radio" name="subject"> General Inquiry</label>
+            <label><input type="radio" name="subject"> General Inquiry</label>
+            <label><input type="radio" name="subject"> General Inquiry</label>
+        </div>
+
+        <div class="field message-box">
+            <label>Message</label>
+            <textarea placeholder="Write your message."></textarea>
+        </div>
+
+        <button class="send-btn">Send Message</button>
+    </div>
+</div>
+
+<!-- ======================================================
+     DARK CONTACT BANNER BELOW CONTACT CARD
+====================================================== -->
+
+<section class="contact-banner">
+  <div class="banner-content">
+    <!-- LEFT: big stacked heading + description -->
+    <div class="banner-left">
+      <p class="sub-title">CONTACT US</p>
+      <h2 class="banner-heading">We'd love to hear<br>from you</h2>
+      <p class="description">
+        Have any question in mind or want to enquire? Please feel free to contact us through the form or the following details.
+      </p>
+    </div>
+
+    <!-- RIGHT: compact contact columns + social icons -->
+    <div class="banner-right">
+      <div class="contact-grid">
+        <!-- phone (left cell) -->
+        <div class="contact-item phone">
+          <div class="mini-title">Let's talk!</div>
+          <div class="contact-value">9999999999</div>
+        </div>
+
+        <!-- email (right cell) -->
+        <div class="contact-item email">
+          <div class="mini-title" aria-hidden="true"></div>
+          <div class="contact-value contact-email">empowernext@email.com</div>
+        </div>
+      </div>
+
+      <!-- headoffice below the two-column row -->
+      <div class="office-block">
+        <div class="mini-title">Headoffice</div>
+        <div class="office-address">123 Address st,<br>Address city, India</div>
+      </div>
+
+      <!-- Social icons centered under right block -->
+      <div class="banner-social-icons" aria-hidden="true">
+        <a href="#" class="social-link"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="social-link"><i class="bi bi-twitter"></i></a>
+        <a href="#" class="social-link"><i class="bi bi-linkedin"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================== CTA BANNER SECTION ========================= -->
+<section class="cta-section container-fluid py-5" style="padding-left: 0; padding-right: 0;">
+  <div class="row justify-content-center mx-0">
+    <div class="col-12">
+      <div class="cta-box d-flex flex-column flex-lg-row align-items-center justify-content-between text-white w-100" style="max-width: 1350px; margin: 0 auto;">
+
+        <!-- Left Content -->
+        <div class="cta-content text-center text-lg-start mb-4 mb-lg-0 px-4 px-lg-5">
+          <h2>Be Industry-Ready.<br>Stay Future-Proof.</h2>
+          <p>Master the tools, technologies, and skills that employers are looking for.</p>
+        </div>
+
+        <!-- Right Image + Button -->
+        <div class="cta-right text-center px-4 px-lg-5">
+          <img
+            src="https://images.unsplash.com/photo-1581091870622-3d8e80c68de0?auto=format&fit=crop&w=600&q=60"
+            alt="Students Learning"
+            class="cta-image img-fluid mb-3"
+            style="width: 320px; max-width: 100%;"
+          >
+          <button class="cta-button">Register Now →</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER PLACEHOLDER ===== -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

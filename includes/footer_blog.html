@@ -1,0 +1,194 @@
+<!-- ==========================
+       FOOTER SECTION
+  ========================== -->
+<style>
+  /* ==========================
+         FOOTER SECTION
+     ========================== */
+  footer {
+    background-color: #004D4D;
+    color: white;
+    padding: 50px 0 20px;
+  }
+
+  .footer-logo img {
+    width: 200px;
+    margin-bottom: 15px;
+  }
+
+  .footer-section h5 {
+    font-weight: 600;
+    margin-bottom: 15px;
+  }
+
+  .footer-section a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 8px;
+    transition: color 0.3s;
+  }
+
+  .footer-section a:hover {
+    color: #00A6A6;
+  }
+
+  .social-icons {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+    margin-top: 10px;
+  }
+
+  .social-icons a {
+    color: white;
+    font-size: 20px;
+    transition: color 0.3s;
+  }
+
+  .social-icons a:hover {
+    color: #00A6A6;
+  }
+
+  @media (max-width: 768px) {
+    .social-icons {
+      justify-content: center;
+    }
+  }
+
+  .subscribe-box {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    margin-top: 10px;
+  }
+
+  .subscribe-box input {
+    width: 100%;
+    padding: 10px 110px 10px 20px;
+    border-radius: 50px;
+    border: 2px solid #ffffff;
+    background-color: #ffffff;
+    color: #333;
+    font-size: 15px;
+    outline: none;
+  }
+
+  .subscribe-box button {
+    position: absolute;
+    top: 50%;
+    right: 4px;
+    transform: translateY(-50%);
+    background-color: #00A6A6;
+    border: none;
+    color: #fff;
+    font-weight: 700;
+    padding: 8px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: all 0.3s ease;
+  }
+
+  .subscribe-box button:hover {
+    background-color: #009090;
+    transform: translateY(-50%) scale(1.05);
+  }
+
+  .footer-bottom {
+    border-top: 1px solid #147c7c;
+    margin-top: 30px;
+    padding-top: 15px;
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .brand-logo {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+  }
+
+  .brand-logo:hover {
+    transform: scale(1.05);
+  }
+
+  @media (max-width: 768px) {
+    .cta-box {
+      flex-direction: column;
+      text-align: center;
+    }
+    .cta-image {
+      width: 100%;
+      margin-top: 20px;
+    }
+    .cta-button {
+      margin-top: 20px;
+    }
+    .brand-logo {
+      height: 45px;
+    }
+  }
+</style>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <!-- Logo + About -->
+      <div class="col-md-3 footer-section">
+        <div class="footer-logo">
+          <img src="../../static/images/logo_robomonk.jpg" alt="Robomonk Logo" class="brand-logo">
+        </div>
+        <p>
+          Join now to receive personalized recommendations from the full Coursera catalog.
+        </p>
+        <div class="social-icons mt-3">
+          <a href="#"><i class="bi bi-facebook"></i></a>
+          <a href="#"><i class="bi bi-twitter"></i></a>
+          <a href="#"><i class="bi bi-pinterest"></i></a>
+          <a href="#"><i class="bi bi-instagram"></i></a>
+        </div>
+      </div>
+
+      <!-- Useful Links -->
+      <div class="col-md-3 footer-section">
+        <h5>USEFUL LINKS</h5>
+        <a href="../Landing_Page.html">Home</a>
+        <a href="#">Forums</a>
+        <a href="../about.html">About me</a>
+        <a href="#">FAQs</a>
+        <a href="#">Privacy policy</a>
+        <a href="#">Terms & Conditions</a>
+      </div>
+
+      <!-- Courses -->
+      <div class="col-md-3 footer-section">
+        <h5>OUR SERVICES</h5>
+        <a href="#">Workshops</a>
+        <a href="#">Skill Builders</a>
+        <a href="#">Job Essential</a>
+        <a href="../Blogs.html">Blogs</a>
+        <a href="#">Courses</a>
+      </div>
+
+      <!-- Contact + Subscribe -->
+      <div class="col-md-3 footer-section">
+        <h5>CONNECT ME</h5>
+        <p>📞 +91 9059715757<br>✉️ info@robomonk.ai</p>
+
+        <h5 class="mt-3">SUBSCRIBE NEWS LETTERS</h5>
+        <p>Enter your email and we'll send you more information.</p>
+        <div class="subscribe-box">
+          <input type="email" placeholder="Enter Email Address">
+          <button>Subscribe</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      © 2025 RobomonK.ai. All rights reserved
+    </div>
+  </div>
+</footer>

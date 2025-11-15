@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About </title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap + Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Poppins', sans-serif; background: #EAF7F6; color: #333; overflow-x: hidden; }
+
+    /* ===================== ABOUT HERO ===================== */
+    .about-section {
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(rgba(0, 80, 80, 0.85)),
+        url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1600&auto=format&fit=crop")
+        center/cover no-repeat;
+      color: #fff;
+      padding: 0px 8% 130px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-top: 0;
+    }
+
+    .about-content { max-width: 640px; z-index: 5; }
+    .about-content h2 { font-size: 3.2rem; font-weight: 800; margin-bottom: 20px; }
+    .about-content p { font-size: 1.05rem; line-height: 1.8; color: #e8f9f8; }
+
+    .about-image { flex: 1 1 340px; text-align: right; z-index: 6; }
+    .about-image img {
+      width: 360px;
+      max-width: 100%;
+      transform: translateY(20px);
+      filter: drop-shadow(0 18px 36px rgba(0,0,0,0.18));
+    }
+
+    /* ===================== WAVES ===================== */
+    .wave-divider { position: absolute; bottom: 0; left: 0; width: 100%; line-height: 0; z-index: 1; pointer-events: none; }
+    .wave-divider svg { display: block; width: 100%; height: 300px; }
+    .wave-back { fill: #064c4b; opacity: 0.55; }
+    .wave-mid  { fill: #0b8887; opacity: 0.85; }
+    .wave-front{ fill: #EAF7F6; }
+
+    /* ===================== WHO WE ARE ===================== */
+    .who-we-are {
+      background-color: #EAF7F6;
+      padding: 0px 0%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .who-container { display: flex; align-items: center; justify-content: space-between; gap: 50px; max-width: 1200px; flex-wrap: wrap; }
+    .who-image { flex: 1 1 45%; text-align: center; }
+    .who-image img { width: 100%; max-width: 400px; }
+    .who-content { flex: 1 1 50%; color: #333; }
+    .who-content h2 { font-size: 2.2rem; font-weight: 700; margin-bottom: 15px; color: #000; }
+    .who-content h2 span { color: #0b8481; border-bottom: 3px solid #0b8481; padding-bottom: 5px; }
+    .who-content p { font-size: 1rem; line-height: 1.8; margin-bottom: 15px; color: #444; }
+
+    /* ===================== FLIP CARDS ===================== */
+    .flip-section {
+      background-color: #EAF7F6;
+      padding: 50px 8%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .flip-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 60px;
+      margin-top: 30px;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .flip-row::-webkit-scrollbar { display: none; }
+
+    .flip-card {
+      background-color: transparent;
+      width: 320px;
+      height: 260px;
+      perspective: 1000px;
+      flex: 0 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.6s ease;
+      transform-style: preserve-3d;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+      border-radius: 20px;
+    }
+    .flip-card:hover .flip-card-inner { transform: rotateY(180deg); }
+    .flip-card-front, .flip-card-back {
+      position: absolute; width: 100%; height: 100%; border-radius: 20px;
+      backface-visibility: hidden; display: flex; justify-content: center; align-items: center;
+      color: white; font-weight: 600; padding: 25px; box-sizing: border-box;
+    }
+    .flip-card-front { background-color: #009999; font-size: 1.2rem; text-transform: uppercase; }
+    .flip-card-back { background-color: #00b2b2; transform: rotateY(180deg); }
+    .flip-card-back p { color: #fff; font-size: 1rem; line-height: 1.6; text-align: center; margin: 0; }
+
+    .flip-card-front .front-content { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; }
+    .flip-card-front .front-content i { font-size: 2.4rem; color: #ffffff; }
+
+    @media (max-width: 992px) {
+      .flip-section { padding: 60px 4%; }
+      .flip-row { gap: 40px; overflow-x: auto; }
+      .flip-card { width: 280px; height: 230px; }
+      .flip-card-back p { font-size: 0.9rem; }
+    }
+
+    /* ============================
+   WHAT WE DO SECTION
+============================ */
+.what-we-do {
+  background: #EAF7F6;
+  padding: 80px 8%;
+}
+
+.what-we-do-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.what-we-do-text {
+  flex: 1 1 500px;
+  color: #333;
+}
+
+.what-we-do-text h2 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.what-we-do-text h2 span {
+  color: #0b8481; /* teal highlight */
+}
+
+.what-we-do-text p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 25px;
+}
+
+.what-we-do-text ul {
+  list-style-type: disc;
+  margin-left: 20px;
+  color: #333;
+}
+
+.what-we-do-text ul li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.what-we-do-image {
+  flex: 1 1 400px;
+  text-align: right;
+}
+
+.what-we-do-image img {
+  width: 420px;
+  max-width: 100%;
+}
+
+/* -------------------------------------------
+   ⭐ ADDED CSS for mobile middle image
+------------------------------------------- */
+.mobile-wwd-img {
+  display: none; /* hidden on desktop */
+}
+
+.original-wwd-img {
+  display: block;
+}
+
+/* ============================
+   RESPONSIVE
+============================ */
+@media (max-width: 992px) {
+  .what-we-do-container {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .what-we-do-image {
+    text-align: center;
+  }
+
+  .what-we-do-image img {
+    width: 320px;
+  }
+
+  .what-we-do-text {
+    text-align: center;
+  }
+
+  /* ⭐ Mobile layout fix: show middle image, hide right image */
+  .mobile-wwd-img {
+    display: block;
+    width: 80%;
+    margin: 20px auto;
+  }
+
+  .original-wwd-img {
+    display: none !important;
+  }
+}
+
+
+//* ============================
+   WHY CHOOSE US SECTION — FULL EDGE FITTED
+============================ */
+.why-choose-us {
+  background: linear-gradient(to bottom, #eaf8f7 0%, #EAF7F6 80%);
+  padding: 20px 0; /* ✅ Reduced top and bottom padding */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.choose-container {
+  background: #ffffff;
+  border-radius: 10px; /* ✅ Slightly rounded, but edge-aligned look */
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
+  padding: 40px 50px; /* ✅ Reduced internal padding on all sides */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  flex-wrap: wrap;
+  width: 97%;           /* ✅ Nearly full width */
+  max-width: 1350px;
+  margin: 20px auto;    /* ✅ Tight top/bottom gap between sections */
+}
+
+.choose-image {
+  flex: 1 1 420px;
+  text-align: center;
+}
+
+.choose-image img {
+  width: 340px;
+  max-width: 100%;
+}
+
+.choose-content {
+  flex: 1 1 500px;
+  color: #333;
+}
+
+.choose-content h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 30px;
+}
+
+.choose-content h2 span {
+  color: #0b8481;
+}
+
+/* Rounded bullet cards */
+.choose-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.choose-content ul li {
+  background: #EAF7F6;
+  border-radius: 30px;
+  padding: 14px 26px;
+  font-size: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.choose-content ul li::before {
+  content: "•";
+  color: #0b8481;
+  font-size: 1.5rem;
+  line-height: 0;
+}
+
+.choose-content ul li:hover {
+  transform: translateX(6px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* ============================
+   RESPONSIVE
+============================ */
+@media (max-width: 992px) {
+  .choose-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 25px;
+    width: 95%;
+    border-radius: 8px;
+    margin: 10px auto;
+  }
+
+  .choose-content h2 {
+    font-size: 2.2rem;
+  }
+
+  .choose-content ul li {
+    justify-content: center;
+  }
+
+  .choose-image img {
+    width: 300px;
+  }
+}
+
+/* ==================== OUR EXPERT MENTORS =========================== */
+.tutoring-section {
+  background-color: #2c4a4a;
+  color: white;
+  border-radius: 12px;
+  margin: 60px auto;
+  padding: 50px 40px;
+  text-align: center;
+  max-width: 1100px;
+}
+
+.tutoring-section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 30px;
+}
+
+/* ========== UPDATED: 2 CARDS PER ROW GRID ========== */
+.tutoring-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* ✅ Two cards per row */
+  gap: 25px;
+  padding-bottom: 15px;
+  width: 100%;
+}
+
+/* Card layout */
+.tutoring-card {
+  background: #fff;
+  color: #333;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border-radius: 10px;
+  padding: 15px 20px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.tutoring-card:hover {
+  transform: scale(1.02);
+}
+
+/* Image styling */
+.tutoring-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+/* Info text */
+.tutor-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.6;
+}
+
+.tutor-info p {
+  margin: 3px 0;
+  font-size: 1rem;
+  color: #333;
+  text-align: left;
+}
+
+/* Arrows */
+.tutoring-arrows {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 25px;
+}
+
+.arrow-btn {
+  background: #fff;
+  color: #0099a8;
+  border: none;
+  border-radius: 6px;
+  width: 36px;
+  height: 36px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.arrow-btn:hover {
+  background-color: #009C9C;
+  color: #fff;
+}
+
+/* ========== MOBILE: 1 CARD PER ROW ========== */
+@media (max-width: 768px) {
+  .tutoring-cards {
+    grid-template-columns: 1fr; /* 1 card per row */
+  }
+
+  .tutoring-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .tutoring-card img {
+    margin: 0 0 10px 0;
+  }
+
+  .tutor-info {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+
+/* ============================
+   MISSION SECTION — MATCHES REFERENCE IMAGE
+============================ */
+.mission-section {
+  background: #EAF7F6;
+  padding: 60px 6%; /* smaller side padding to bring text closer */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mission-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  max-width: 1250px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.mission-text {
+  flex: 1 1 48%;
+  color: #333;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  line-height: 1.75;
+  text-align: justify; /* ✅ exactly like the picture */
+  margin-left: 2%; /* ✅ slight left offset */
+}
+
+.mission-text p {
+  margin-bottom: 12px;
+  max-width: 100%;
+}
+
+.mission-text strong {
+  color: #0b8481;
+  font-weight: 700;
+}
+
+.mission-image {
+  flex: 1 1 48%;
+  text-align: center;
+}
+
+.mission-image img {
+  width: 500px; /* ✅ image slightly larger to balance layout */
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* ============================
+   RESPONSIVE DESIGN
+============================ */
+@media (max-width: 992px) {
+  .mission-container {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .mission-text {
+    flex: 1 1 100%;
+    text-align: center;
+    margin-left: 0;
+  }
+
+  .mission-image img {
+    width: 360px;
+  }
+}
+
+/* ==========================
+       CTA SECTION
+    ========================== */
+    .cta-section {
+      background-color: #EAF7F6;
+      padding: 40px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .cta-box {
+      background-color: #00A6A6;
+      border: 2px dotted #ffffff;
+      border-radius: 10px;
+      padding: 40px;
+      width: 90%;
+      max-width: 1000px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #fff;
+    }
+
+    .cta-content h2 {
+      font-weight: 700;
+      font-size: 2rem;
+      line-height: 1.3;
+      margin-bottom: 15px;
+    }
+
+    .cta-content p {
+      margin-bottom: 0;
+      font-size: 1rem;
+    }
+
+    .cta-button {
+      background-color: #ffffff;
+      color: #00A6A6;
+      font-weight: 600;
+      border-radius: 8px;
+      border: none;
+      padding: 10px 30px;
+      transition: 0.3s;
+    }
+
+    .cta-button:hover {
+      background-color: #dff3f2;
+      transform: scale(1.05);
+    }
+
+    .cta-image {
+      width: 320px;
+      border-radius: 8px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <!-- ===== HEADER PLACEHOLDER ===== -->
+  <div id="header-placeholder"></div>
+
+  <!-- ===================== About US ===================== -->
+  <section class="about-section container-fluid">
+  <div class="row align-items-center justify-content-between px-lg-5 px-md-4 px-3">
+    <div class="col-lg-6 col-md-12">
+      <div class="about-content">
+        <h2>About Us</h2>
+        <p>
+          At Robomonk.ai, we blend technology, innovation, and learning to build smarter,
+          human-centered solutions that empower the next generation of creators.
+        </p>
+      </div>
+    </div>
+
+    <div class="col-lg-6 col-md-12 text-center">
+      <div class="about-image">
+        <img src="../static/images/about_us_main.png" alt="About Us Illustration" class="img-fluid">
+      </div>
+    </div>
+  </div>
+
+  <!-- Wave Divider -->
+  <div class="wave-divider" aria-hidden="true">
+    <svg viewBox="0 0 1440 320" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path class="wave-back" d="M0,260 C120,160 300,120 480,170 C660,220 820,120 980,180 C1160,250 1280,230 1440,210 L1440,320 L0,320 Z" />
+      <path class="wave-mid"  d="M0,250 C140,170 320,110 520,170 C720,230 900,140 1060,190 C1220,240 1320,230 1440,220 L1440,320 L0,320 Z" />
+      <path class="wave-front" d="M0,280 C100,200 260,120 440,170 C620,220 820,120 1000,180 C1180,240 1320,220 1440,240 L1440,320 L0,320 Z" />
+    </svg>
+  </div>
+</section>
+
+<!-- who we are-->
+ <section class="who-we-are container-fluid py-5">
+  <div class="row align-items-center justify-content-center px-lg-5 px-md-4 px-3">
+
+    <!-- IMAGE (mobile = last, desktop = first) -->
+    <div class="col-lg-6 col-md-12 text-center mb-4 mb-lg-0 order-2 order-lg-1">
+      <img src="../static/images/who_we_are.png" alt="Who We Are" class="img-fluid">
+    </div>
+
+    <!-- TEXT (mobile = first, desktop = last) -->
+    <div class="col-lg-6 col-md-12 order-1 order-lg-2">
+      <div class="who-content">
+        <h2>Who We <span>Are</span></h2>
+        <p>
+          We are a team of passionate professionals committed to advancing education through technology.
+        </p>
+        <p>
+          Our focus lies in developing AI-driven training solutions that shape skilled professionals for the future.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+  <!-- ===================== FLIP CARDS (Vision / Mission / Values) ===================== -->
+<section class="flip-section">
+  <div class="container-fluid px-lg-5 px-md-4 px-3">
+    <div class="row justify-content-center g-4">
+
+      <!-- Vision Card -->
+      <div class="col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="front-content">
+                <i class="fas fa-lightbulb"></i>
+                <div>Our Vision</div>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <p>
+                To empower a new generation of innovators who blend technology
+                with creativity to build a smarter, sustainable, and human-centered future.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mission Card -->
+      <div class="col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="front-content">
+                <i class="fas fa-bullseye"></i>
+                <div>Our Mission</div>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <p>
+                To make advanced technology education accessible, practical, and
+                industry-driven — nurturing learners into skilled professionals ready
+                for the Industry 5.0 era.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Values Card -->
+      <div class="col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="front-content">
+                <i class="fas fa-hand-holding-heart"></i>
+                <div>Our Values</div>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <p>
+                Innovation, Integrity, and Impact — we believe in learning with purpose,
+                building responsibly, and shaping technology that benefits people and the planet.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div> <!-- end row -->
+  </div> <!-- end container -->
+</section>
+
+  <!-- ============================
+     WHAT WE DO SECTION
+============================ -->
+<section class="what-we-do container-fluid py-5">
+  <div class="row align-items-center justify-content-between px-lg-5 px-md-4 px-3">
+
+    <div class="col-lg-6 col-md-12">
+      <div class="what-we-do-text">
+        <h2>What We <span>Do</span></h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur. Dui auctor sagittis est et nisl.
+          Cras blandit ultrices adipiscing eget volutpat sed. Lorem diam amet donec enim.
+        </p>
+
+        <!-- ⭐ Mobile Middle Image -->
+        <img src="../static/images/what_we_do.png"
+             class="img-fluid mobile-wwd-img"
+             alt="What We Do Mobile">
+
+        <ul>
+          <li>Provide high-quality products/services tailored to customer needs</li>
+          <li>Offer expert guidance and personalized support</li>
+          <li>Embrace innovation to deliver better solutions every day</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-lg-6 col-md-12 text-center">
+      <div class="what-we-do-image original-wwd-img">
+        <img src="../static/images/what_we_do.png"
+             alt="What We Do Illustration"
+             class="img-fluid">
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ============================
+     WHY CHOOSE US SECTION
+============================ -->
+<section class="why-choose-us">
+  <div class="choose-container">
+    <!-- Left Image -->
+    <div class="choose-image">
+      <img
+        src="../static/images/why_choose_us.png"
+        alt="Why Choose Us Illustration"
+      />
+    </div>
+
+    <!-- Right Content -->
+    <div class="choose-content">
+      <h2>Why <span>Choose Us</span></h2>
+      <ul>
+        <li>Human + Machine Synergy</li>
+        <li>Beyond Automation</li>
+        <li>Future-Ready Learning</li>
+        <li>Sustainable & Responsible Tech</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== OUR EXPERT MENTORS SECTION ===== -->
+<section class="tutoring-section">
+  <h2>Advisory Commity</h2>
+
+  <div class="tutoring-cards" id="tutoringContainer">
+    <!-- Card 1 -->
+    <div class="tutoring-card">
+      <img src="../static/images/vikas.jpg" alt="Mentor 1">
+      <div class="tutor-info">
+        <p><strong>Name:</strong> R.Vikas Reddy</p>
+        <p><strong>Designation:</strong> CEO & Robotics Expert</p>
+        <p><strong>Experience:</strong> 14+ Years</p>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="tutoring-card">
+      <img src="../static/images/yashika.jpg" alt="Mentor 2">
+      <div class="tutor-info">
+        <p><strong>Name:</strong> R.Yashika </p>
+        <p><strong>Designation:</strong> COO & Technology Expert</p>
+        <p><strong>Experience:</strong> 10+ Years</p>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="tutoring-card">
+      <img src="../static/images/santhosh.jpg" alt="Mentor 3">
+      <div class="tutor-info">
+        <p><strong>Name:</strong> R.Santhosh</p>
+        <p><strong>Designation:</strong> Data Scientist & AI-Expert </p>
+        <p><strong>Experience:</strong> 10+ Years</p>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="tutoring-card">
+      <img src="../static/images/mounika.jpg" alt="Mentor 4">
+      <div class="tutor-info">
+        <p><strong>Name:</strong> Mounika</p>
+        <p><strong>Designation:</strong> VLSI Design Expert</p>
+        <p><strong>Experience:</strong> 9+ Years</p>
+      </div>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="tutoring-card">
+      <img src="../static/images/sneha1.jpg" alt="Mentor 5">
+      <div class="tutor-info">
+        <p><strong>Name:</strong> P.Sneha</p>
+        <p><strong>Designation:</strong> Full Stack Developer</p>
+        <p><strong>Experience:</strong> 6+ Years</p>
+      </div>
+    </div>
+
+    <!-- Card 6 -->
+    <div class="tutoring-card">
+      <img src="../static/images/Shabrinath.jpg" alt="Mentor 6">
+      <div class="tutor-info">
+        <p><strong>Name:</strong> Shabrinath</p>
+        <p><strong>Designation:</strong> MERN Stack Developer</p>
+        <p><strong>Experience:</strong> 11+ Years</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Arrows -->
+  <div class="tutoring-arrows">
+    <button class="arrow-btn" id="prevMentor">←</button>
+    <button class="arrow-btn" id="nextMentor">→</button>
+  </div>
+</section>
+
+<!-- ===== mission SECTION ===== -->
+
+<section class="mission-section">
+  <div class="mission-container">
+    <div class="mission-text">
+      <p>
+        At <strong>RoboMonk Technologies Pvt. Ltd.</strong>, we believe that true innovation happens 
+        when machine intelligence meets human creativity. Our mission is to educate and empower 
+        a new generation that builds technology not just for automation, but for meaningful innovation.
+      </p>
+      <p>
+        RoboMonk is more than an EdTech brand; it’s a philosophy of balance — between logic and wisdom, 
+        speed and empathy, data and intuition.
+      </p>
+      <p>
+        This harmony defines the <strong>Industry 5.0</strong> era, where humans and machines collaborate 
+        to make technology sustainable, responsible, and deeply human.
+      </p>
+    </div>
+
+    <div class="mission-image">
+<img src="../static/images/mission.png" alt="Our Mission">
+    </div>
+  </div>
+</section>
+
+<!-- JS -->
+<script>
+  const container = document.getElementById('tutoringContainer');
+  document.getElementById('nextMentor').addEventListener('click', () => {
+    container.scrollBy({ left: 400, behavior: 'smooth' });
+  });
+  document.getElementById('prevMentor').addEventListener('click', () => {
+    container.scrollBy({ left: -400, behavior: 'smooth' });
+  });
+</script>
+
+  <!-- ========================== CTA BANNER SECTION ========================= -->
+<section class="cta-section container-fluid py-5" style="padding-left: 0; padding-right: 0;">
+  <div class="row justify-content-center mx-0">
+    <div class="col-12">
+      <div class="cta-box d-flex flex-column flex-lg-row align-items-center justify-content-between text-white w-100" style="max-width: 1350px; margin: 0 auto;">
+
+        <!-- Left Content -->
+        <div class="cta-content text-center text-lg-start mb-4 mb-lg-0 px-4 px-lg-5">
+          <h2>Be Industry-Ready.<br>Stay Future-Proof.</h2>
+          <p>Master the tools, technologies, and skills that employers are looking for.</p>
+        </div>
+
+        <!-- Right Image + Button -->
+        <div class="cta-right text-center px-4 px-lg-5">
+          <img
+            src="https://images.unsplash.com/photo-1581091870622-3d8e80c68de0?auto=format&fit=crop&w=600&q=60"
+            alt="Students Learning"
+            class="cta-image img-fluid mb-3"
+            style="width: 320px; max-width: 100%;"
+          >
+          <button class="cta-button">Register Now →</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- ===== FOOTER PLACEHOLDER ===== -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
